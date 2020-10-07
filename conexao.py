@@ -53,7 +53,7 @@ def getPorID(id):
     cursor.execute(sql)
     u = []
     for(id, name, email) in cursor:
-        u.append([{"id": str(id), "name": name, "email": email}])
+        u.append({"id": str(id), "name": name, "email": email})
 
     cursor.close()
     return u
