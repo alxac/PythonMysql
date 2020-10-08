@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 from conexao import inserirTb, getPorID, getTodos, getDel, getEdit
 from model import Usuario
@@ -36,7 +36,7 @@ def cadastraUser():
 @app.route('/user', methods=["PUT"])
 def EditaUser():
     body = request.get_json()
-
+    print(body)
     if("name" not in body): return geraResponse(400, "O campo nome é obrigatório")
     if("email" not in body): return geraResponse(400, "O campo email é obrigatório")
 
